@@ -3,7 +3,7 @@
 function findMatching(drivers, string) {
   let lowerCased = string.toLowerCase();
   return drivers.filter( element => {
-    return element.toLowerCase().indexOf(lowerCased) !== -1;
+    return element.toLowerCase() === lowerCased;
   });
 }
 
@@ -11,7 +11,7 @@ function fuzzyMatch(drivers, string) {
   let lowerCased = string.toLowerCase();
 
   return drivers.filter( element => {
-    return element.toLowerCase().slice(0, 2) === lowerCased;
+    return element.toLowerCase().slice(0, lowerCased.length) === lowerCased;
   })
 }
 
